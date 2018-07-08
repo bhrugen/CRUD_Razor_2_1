@@ -12,6 +12,10 @@ namespace CRUD_Razor_2_1.Pages.BookList
     public class IndexModel : PageModel
     {
         private readonly ApplicationDbContext _db;
+
+        [TempData]
+        public string Message { get; set; }
+
         public IEnumerable<Book> Books { get; set; }
 
 
