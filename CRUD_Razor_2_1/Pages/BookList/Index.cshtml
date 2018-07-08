@@ -11,7 +11,36 @@
 
 @if (Model.Books.Count() > 0)
 {
-    <div> Books Available!</div>
+    <br /><br />
+    <table class="table">
+        <tr>
+            <th>
+                @Html.DisplayNameFor(m => m.Books.FirstOrDefault().Name)
+            </th>
+            <th>
+                @Html.DisplayNameFor(m => m.Books.FirstOrDefault().Author)
+            </th>
+            <th>
+                @Html.DisplayNameFor(m => m.Books.FirstOrDefault().ISBN)
+            </th>
+        </tr>
+        @foreach (var item in Model.Books)
+        {
+        <tr>
+            <td>
+                @Html.DisplayFor(m => item.Name)
+            </td>
+            <td>
+                @Html.DisplayFor(m => item.Author)
+            </td>
+            <td>
+                @Html.DisplayFor(m => item.ISBN)
+            </td>
+        </tr>
+
+        }
+    </table>
+    <br /><br />
 
 }
 else
